@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harsh Tyagi — Portfolio</title>
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/windows.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       BOOT SCREEN
+  ══════════════════════════════════ -->
+  <div id="boot-screen">
+    <div class="boot-logo">Harsh Dev Environment</div>
+<div class="boot-sub">Software Developer Workspace v1.0</div>
+    <div id="boot-progress">
+      <div id="boot-progress-bar"></div>
+    </div>
+    <div id="boot-text">Initializing kernel...</div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       DESKTOP
+  ══════════════════════════════════ -->
+  <div id="desktop">
+
+    <div class="icon" style="top:20px;left:20px"   ondblclick="openWindow('about')"          data-tip="About Me">
+      <div class="ico">🖥️</div><span>My Portfolio</span>
+    </div>
+    <div class="icon" style="top:110px;left:20px"  ondblclick="openWindow('projects')"        data-tip="Projects">
+      <div class="ico">📁</div><span>Projects</span>
+    </div>
+    <div class="icon" style="top:200px;left:20px"  ondblclick="openWindow('skills')"          data-tip="Technical Skills">
+      <div class="ico">⚙️</div><span>Skills.exe</span>
+    </div>
+    <div class="icon" style="top:290px;left:20px"  ondblclick="openWindow('experience')"      data-tip="Work Experience">
+      <div class="ico">💼</div><span>Experience</span>
+    </div>
+    <div class="icon" style="top:380px;left:20px"  ondblclick="openWindow('contact')"         data-tip="Contact Me">
+      <div class="ico">📧</div><span>Contact.exe</span>
+    </div>
+    <div class="icon" style="top:20px;left:110px"  ondblclick="openWindow('certifications')"  data-tip="Certifications">
+      <div class="ico">🏆</div><span>Certificates</span>
+    </div>
+    <div class="icon" style="top:110px;left:110px" onclick="openLink('https://github.com/harshtyagi334')" data-tip="GitHub Profile">
+      <div class="ico">🐱</div><span>GitHub.lnk</span>
+    </div>
+    <div class="icon" style="top:200px;left:110px" onclick="openLink('https://www.linkedin.com/in/harsh-tyagi-118577312/')" data-tip="LinkedIn">
+      <div class="ico">🔗</div><span>LinkedIn.lnk</span>
+    </div>
+    <div class="icon" style="top:290px;left:110px" onclick="openLink('https://www.hackerrank.com/harshtyagi334')" data-tip="HackerRank">
+      <div class="ico">💻</div><span>HackerRank.lnk</span>
+    </div>
+    <div class="icon" style="top:380px;left:110px" ondblclick="openWindow('recycle')"         data-tip="Recycle Bin">
+      <div class="ico">🗑️</div><span>Recycle Bin</span>
+    </div>
+
+  </div><!-- /#desktop -->
+
+  <!-- ══════════════════════════════════
+       WINDOWS
+  ══════════════════════════════════ -->
+
+  <!-- ABOUT -->
+  <div class="window" id="win-about" style="top:60px;left:200px;width:660px;height:500px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-about')">
+      <span class="title-bar-icon">🖥️</span>
+      <span class="title-bar-text">My Portfolio — Harsh Tyagi</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-about')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-about')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-about')">✕</button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="window-body">
+      <div class="win-content" id="content-about"></div>
+    </div>
+    <div class="status-bar">
+      <div class="status-panel">Ready</div>
+      <div class="status-panel" style="margin-left:8px;">Pimpri Chinchwad University · BE CSE 2028</div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="window" id="win-projects" style="top:80px;left:220px;width:640px;height:480px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-projects')">
+      <span class="title-bar-icon">📁</span>
+      <span class="title-bar-text">Projects — C:\Harsh\Projects</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-projects')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-projects')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-projects')">✕</button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Sort</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="window-body">
+      <div class="win-content" id="content-projects"></div>
+    </div>
+    <div class="status-bar">
+      <div class="status-panel">2 Projects</div>
+      <div class="status-panel" style="margin-left:8px;">ANPR · HereBy</div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="window" id="win-skills" style="top:100px;left:240px;width:540px;height:500px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-skills')">
+      <span class="title-bar-icon">⚙️</span>
+      <span class="title-bar-text">Skills.exe — System Properties</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-skills')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-skills')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-skills')">✕</button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="window-body">
+      <div class="win-content" id="content-skills"></div>
+    </div>
+    <div class="status-bar">
+      <div class="status-panel">Loading complete</div>
+      <div class="status-panel" style="margin-left:8px;">5 Languages · 7+ Frameworks · 4 AI/ML Tools</div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="window" id="win-experience" style="top:90px;left:230px;width:620px;height:460px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-experience')">
+      <span class="title-bar-icon">💼</span>
+      <span class="title-bar-text">Experience — Work History</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-experience')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-experience')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-experience')">✕</button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+    </div>
+    <div class="window-body">
+      <div class="win-content" id="content-experience"></div>
+    </div>
+    <div class="status-bar">
+      <div class="status-panel">1 Internship</div>
+      <div class="status-panel" style="margin-left:8px;">TATA · Gatha Technologies</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="window" id="win-certifications" style="top:100px;left:250px;width:500px;height:420px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-certifications')">
+      <span class="title-bar-icon">🏆</span>
+      <span class="title-bar-text">Certificates — 4 items</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-certifications')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-certifications')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-certifications')">✕</button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">View</span>
+    </div>
+    <div class="window-body">
+      <div class="win-content" id="content-certifications"></div>
+    </div>
+    <div class="status-bar">
+      <div class="status-panel">4 Certificates</div>
+      <div class="status-panel" style="margin-left:8px;">TATA · Deloitte · Microsoft · Tech Mahindra</div>
+    </div>
+  </div>
+
+  <!-- HACKERRANK -->
+  <div class="window" id="win-hackerrank" style="top:110px;left:260px;width:520px;height:440px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-hackerrank')">
+      <span class="title-bar-icon">💻</span>
+      <span class="title-bar-text">HackerRank — Coding Profile</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-hackerrank')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-hackerrank')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-hackerrank')">✕</button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">View</span>
+    </div>
+    <div class="window-body">
+      <div class="win-content" id="content-hackerrank"></div>
+    </div>
+    <div class="status-bar">
+      <div class="status-panel">HackerRank Profile</div>
+      <div class="status-panel" style="margin-left:8px;">harshtyagi334</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="window" id="win-contact" style="top:90px;left:230px;width:480px;height:440px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-contact')">
+      <span class="title-bar-icon">📧</span>
+      <span class="title-bar-text">Contact.exe — Send Message</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-contact')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-contact')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-contact')">✕</button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <span class="menu-item">File</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="window-body">
+      <div class="win-content" id="content-contact"></div>
+    </div>
+    <div class="status-bar">
+      <div class="status-panel">Open to internship opportunities</div>
+    </div>
+  </div>
+
+  <!-- RECYCLE BIN -->
+  <div class="window" id="win-recycle" style="top:110px;left:260px;width:380px;height:260px;">
+    <div class="title-bar" onmousedown="startDrag(event,'win-recycle')">
+      <span class="title-bar-icon">🗑️</span>
+      <span class="title-bar-text">Recycle Bin</span>
+      <div class="title-bar-btns">
+        <button class="win-btn" onclick="minimizeWindow('win-recycle')">_</button>
+        <button class="win-btn" onclick="maximizeWindow('win-recycle')">□</button>
+        <button class="win-btn close" onclick="closeWindow('win-recycle')">✕</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="win-content" style="text-align:center;padding-top:30px;">
+        <div style="font-size:48px;">🗑️</div>
+        <p style="margin-top:12px;color:#555;">The Recycle Bin is empty.</p>
+        <p style="font-size:10px;color:#888;margin-top:6px;">(No bugs to discard — clean code only!)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TASKBAR
+  ══════════════════════════════════ -->
+  <div id="taskbar">
+    <button id="start-btn" onclick="toggleStartMenu()">
+      <span class="win-logo">🪟</span> <strong>Start</strong>
+    </button>
+    <div class="taskbar-divider"></div>
+    <div id="taskbar-buttons"></div>
+    <div id="systray">
+      <span>🔊</span>
+      <span>🌐</span>
+      <span id="clock">00:00</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       START MENU
+  ══════════════════════════════════ -->
+  <div id="start-menu">
+    <div class="start-sidebar"><span>PixelOS</span></div>
+    <div class="start-items">
+      <div class="start-item" onclick="openWindow('about');toggleStartMenu()">        <span class="ico">🖥️</span>My Portfolio</div>
+      <div class="start-item" onclick="openWindow('projects');toggleStartMenu()">     <span class="ico">📁</span>Projects</div>
+      <div class="start-item" onclick="openWindow('skills');toggleStartMenu()">       <span class="ico">⚙️</span>Skills.exe</div>
+      <div class="start-item" onclick="openWindow('experience');toggleStartMenu()">   <span class="ico">💼</span>Experience</div>
+      <div class="start-item" onclick="openWindow('certifications');toggleStartMenu()"><span class="ico">🏆</span>Certificates</div>
+      <div class="start-item" onclick="openWindow('hackerrank');toggleStartMenu()">   <span class="ico">💻</span>HackerRank</div>
+      <div class="start-item" onclick="openWindow('contact');toggleStartMenu()">      <span class="ico">📧</span>Contact.exe</div>
+      <div class="start-divider"></div>
+      <div class="start-item" onclick="openLink('https://github.com/harshtyagi334');toggleStartMenu()">   <span class="ico">🐱</span>GitHub</div>
+      <div class="start-item" onclick="openLink('https://www.linkedin.com/in/harsh-tyagi-118577312/');toggleStartMenu()"><span class="ico">🔗</span>LinkedIn</div>
+      <div class="start-item" onclick="openLink('https://www.hackerrank.com/harshtyagi334');toggleStartMenu()"><span class="ico">💻</span>HackerRank ↗</div>
+      <div class="start-divider"></div>
+      <div class="start-item" onclick="location.reload()"><span class="ico">🔄</span>Restart</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       WELCOME DIALOG
+  ══════════════════════════════════ -->
+  <div id="welcome-dialog" class="open">
+    <div class="dialog-box">
+      <div class="title-bar">
+        <span class="title-bar-icon">🪟</span>
+        <span class="title-bar-text">Welcome to PixelOS</span>
+        <div class="title-bar-btns">
+          <button class="win-btn close" onclick="closeDialog()">✕</button>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-icon">👋</div>
+        <div class="dialog-text">
+          <h3>Welcome to Harsh Tyagi's Portfolio</h3>
+          <p>This is a Windows 98-inspired interactive portfolio. Double-click desktop icons or use the <strong>Start menu</strong> to explore.</p>
+          <p>🖥️ Portfolio &nbsp;·&nbsp; 📁 Projects &nbsp;·&nbsp; ⚙️ Skills &nbsp;·&nbsp; 💼 Experience &nbsp;·&nbsp; 💻 HackerRank</p>
+          <p style="color:#555;font-size:10px;">All windows are draggable &amp; resizable!</p>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button class="dialog-btn" onclick="closeDialog()">OK</button>
+        <button class="dialog-btn" onclick="openWindow('about');closeDialog()">Open Portfolio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SCRIPTS (order matters)
+  ══════════════════════════════════ -->
+  <script src="js/content.js"></script>
+  <script src="js/window-manager.js"></script>
+  <script src="js/taskbar.js"></script>
+  <script src="js/boot.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

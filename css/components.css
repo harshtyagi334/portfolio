@@ -1,0 +1,336 @@
+/* ═══════════════════════════════════════
+   components.css — Content, Badges, Cards, Tables, Forms
+   ═══════════════════════════════════════ */
+
+/* ── WIN CONTENT BASE ── */
+.win-content {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #000;
+  padding-bottom: 12px;
+}
+
+.win-content h1 {
+  font-size: 22px;
+  border-bottom: 2px solid var(--win-title);
+  padding-bottom: 4px;
+  margin-bottom: 14px;
+  font-family: var(--font-retro);
+  letter-spacing: 1px;
+  color: var(--win-title);
+}
+
+.win-content h2 {
+  font-size: 13px;
+  margin: 16px 0 6px;
+  color: var(--win-title);
+  border-left: 3px solid var(--win-title);
+  padding-left: 7px;
+  font-family: var(--font-ui);
+}
+
+.win-content h3 {
+  font-size: 12px;
+  margin: 10px 0 4px;
+  color: #222;
+}
+
+.win-content p    { margin-bottom: 8px; }
+.win-content ul   { margin: 6px 0 8px 20px; }
+.win-content li   { margin-bottom: 4px; }
+
+/* ── TABLES ── */
+.win-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8px 0;
+  font-size: 11px;
+}
+.win-content th {
+  background: var(--win-title);
+  color: #fff;
+  padding: 5px 8px;
+  text-align: left;
+}
+.win-content td {
+  padding: 4px 8px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+.win-content tr:hover td { background: #e8e8ff; }
+
+/* ── INFOBOX (Wikipedia style) ── */
+.infobox {
+  float: right;
+  clear: right;
+  margin: 0 0 12px 14px;
+  border: 2px solid #aaa;
+  background: #f8f8ff;
+  padding: 0;
+  font-size: 11px;
+  width: 210px;
+}
+.infobox table   { margin: 0; width: 100%; }
+.infobox th      { background: var(--win-title); color: #fff; font-size: 12px; text-align: center; padding: 5px; }
+.infobox td      { padding: 3px 5px; border-bottom: 1px solid #ddd; }
+.infobox td:first-child { font-weight: bold; white-space: nowrap; color: #555; width: 70px; }
+
+/* ── TOC (Wikipedia style) ── */
+.wiki-toc {
+  border: 1px solid #aaa;
+  background: #f8f8ff;
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 8px 0 14px;
+  font-size: 11px;
+  min-width: 160px;
+}
+.wiki-toc strong { font-size: 12px; display: block; margin-bottom: 4px; }
+.wiki-toc ol     { margin: 0 0 0 16px; }
+.wiki-toc li     { margin: 2px 0; }
+
+/* ── ABOUT HEADER ── */
+.about-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.avatar-placeholder {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  background: var(--win-title);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  border: 2px solid #aaa;
+}
+
+/* ── BADGES ── */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 2px;
+  background: var(--win-title);
+  color: #fff;
+  font-size: 10px;
+  border: 1px solid #000040;
+}
+.badge.green  { background: #006400; }
+.badge.red    { background: #8b0000; }
+.badge.gray   { background: #555555; }
+.badge.orange { background: #cc6600; }
+.badge.hr     { background: #2ec866; } /* HackerRank green */
+
+/* ── PROJECT CARD ── */
+.project-card {
+  border: 2px solid;
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  background: #f4f4f8;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+.project-card:last-child { margin-bottom: 0; }
+.project-card h3 { color: var(--win-title); font-size: 13px; margin-bottom: 6px; }
+.project-card .tags { margin-top: 8px; }
+
+/* ── SKILL PROGRESS BARS ── */
+.skill-row   { margin-bottom: 8px; }
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+.progress-bar-wrap {
+  width: 100%;
+  background: #ddd;
+  border: 2px solid;
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  height: 18px;
+}
+.progress-bar-fill {
+  height: 100%;
+  width: 0;                       /* animated by JS */
+  display: flex;
+  align-items: center;
+  padding-left: 4px;
+  color: #fff;
+  font-size: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000080 0px,  #1084d0 8px,
+    #000080 8px,  #000080 16px
+  );
+  transition: width 1.2s ease;
+}
+
+/* ── CERTIFICATE CARD ── */
+.cert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 2px solid;
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  background: #fffff8;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.cert-card:last-child { margin-bottom: 0; }
+.cert-card .cert-icon { font-size: 28px; flex-shrink: 0; }
+.cert-card .cert-title { font-weight: bold; font-size: 12px; margin-bottom: 2px; }
+.cert-card .cert-meta  { color: #555; font-size: 10px; }
+
+/* ── CONTACT FORM ── */
+.win-form label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size: 11px;
+}
+.win-form input,
+.win-form textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  border: 2px solid;
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  padding: 4px 6px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  background: #fff;
+  outline: none;
+}
+.win-form input:focus,
+.win-form textarea:focus {
+  border-color: var(--win-title);
+}
+.win-form textarea { resize: vertical; height: 80px; }
+.win-form .submit-btn {
+  padding: 4px 18px;
+  background: var(--win-bg);
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-darker) var(--win-border-darker) var(--win-border-light);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: bold;
+}
+.win-form .submit-btn:hover  { background: #d0d0d0; }
+.win-form .submit-btn:active {
+  border-color: var(--win-border-darker) var(--win-border-light) var(--win-border-light) var(--win-border-darker);
+  padding: 5px 17px 3px 19px;
+}
+
+/* ── HACKERRANK SECTION ── */
+.hr-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+.hr-stat {
+  border: 2px solid;
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  background: #f0fff0;
+  padding: 8px;
+  text-align: center;
+}
+.hr-stat .hr-num   { font-size: 22px; font-family: var(--font-retro); color: #2ec866; }
+.hr-stat .hr-label { font-size: 10px; color: #555; }
+
+.hr-domain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+}
+.hr-domain .hr-stars { color: #f5a623; letter-spacing: 1px; }
+.hr-domain .hr-name  { flex: 1; font-size: 11px; font-weight: bold; }
+
+.hr-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: #2ec866;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+  border: 2px solid #1a9e4e;
+}
+.hr-visit-btn:hover { background: #1a9e4e; }
+
+/* ── FACEBOOK-STYLE POST (Experience) ── */
+.fb-post {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 0;
+}
+.fb-post:last-child { margin-bottom: 0; }
+.fb-post-header    { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.fb-avatar         {
+  width: 38px; height: 38px;
+  background: #1877f2;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 20px;
+  flex-shrink: 0;
+}
+.fb-user           { font-weight: bold; font-size: 12px; color: #1877f2; }
+.fb-time           { color: #999; font-size: 10px; }
+.fb-text           { font-size: 11px; line-height: 1.5; }
+.fb-footer         { margin-top: 8px; border-top: 1px solid #eee; padding-top: 6px; font-size: 10px; color: #65676b; }
+
+/* ── INFO BOX / NOTE ── */
+.info-note {
+  background: #fffff0;
+  border: 1px solid #cc9;
+  padding: 8px 10px;
+  font-size: 11px;
+  margin: 8px 0;
+}
+.info-note strong { color: var(--win-title); }
+/* ── FIX FOR CLIPPED RESUME CARD (INFOBOX) ── */
+/* ── FIX FOR RESUME CARD TO FIT INSIDE ── */
+.infobox {
+  width: 100%;
+  max-width: 260px;
+  float: right;
+  clear: right;
+}
+
+.infobox td:first-child {
+  white-space: normal;
+  width: auto;
+}
+
+.infobox td {
+  white-space: normal;
+  word-break: break-word;
+  padding: 4px 6px;
+}
+
+.win-content {
+  overflow-x: auto;
+}
+
+#content-about {
+  overflow: visible;
+}
+
+.win-content {
+  overflow: visible;
+}

@@ -1,0 +1,138 @@
+/* ═══════════════════════════════════════
+   base.css — Variables, Reset, Desktop, Icons
+   ═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+/* ── CSS VARIABLES ── */
+:root {
+  --win-bg:           #c0c0c0;
+  --win-title:        #000080;
+  --win-title-end:    #1084d0;
+  --win-title-text:   #ffffff;
+  --win-border-light: #ffffff;
+  --win-border-dark:  #808080;
+  --win-border-darker:#404040;
+  --desktop-bg:       #008080;
+  --taskbar-h:        40px;
+  --accent:           #000080;
+  --font-ui:          'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+  --font-retro:       'VT323', monospace;
+  --font-mono:        'Share Tech Mono', monospace;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── BASE ── */
+body {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  background: var(--desktop-bg);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+}
+
+a {
+  color: #0000cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a:hover { color: #cc0000; }
+
+::selection {
+  background: var(--win-title);
+  color: #fff;
+}
+
+/* ── SCROLLBARS ── */
+::-webkit-scrollbar               { width: 16px; }
+::-webkit-scrollbar-track         { background: var(--win-bg); border-left: 1px solid var(--win-border-dark); }
+::-webkit-scrollbar-thumb         {
+  background: var(--win-bg);
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-darker) var(--win-border-darker) var(--win-border-light);
+}
+::-webkit-scrollbar-button        {
+  background: var(--win-bg);
+  height: 16px;
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-darker) var(--win-border-darker) var(--win-border-light);
+}
+
+/* ── DESKTOP ── */
+#desktop {
+  position: fixed;
+  inset: 0;
+  bottom: var(--taskbar-h);
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px,
+      transparent 1px, transparent 8px
+    ),
+    radial-gradient(ellipse at 30% 40%, #009999 0%, #008080 50%, #006666 100%);
+}
+
+/* ── DESKTOP ICONS ── */
+.icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 80px;
+  padding: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.icon:hover,
+.icon.active {
+  border: 2px dashed rgba(255,255,255,0.5);
+  background: rgba(0,0,128,0.3);
+}
+.icon .ico {
+  font-size: 32px;
+  line-height: 1;
+  filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.5));
+}
+.icon span {
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000, -1px -1px 1px #000;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+/* ── TOOLTIPS ── */
+[data-tip] { position: relative; }
+[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffcc;
+  border: 1px solid #000;
+  padding: 2px 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 1px 1px 0 #000;
+  color: #000;
+}
+
+/* ── RESPONSIVE HINT ── */
+@media (max-width: 600px) {
+  .icon { width: 64px; }
+  .icon .ico { font-size: 26px; }
+}

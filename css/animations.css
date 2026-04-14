@@ -1,0 +1,140 @@
+/* ═══════════════════════════════════════
+   animations.css — Boot Screen, Transitions, Effects
+   ═══════════════════════════════════════ */
+
+/* ── BOOT SCREEN ── */
+#boot-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: opacity 0.6s ease;
+}
+
+.boot-logo {
+  font-family: var(--font-retro);
+  font-size: 56px;
+  color: #0078d7;
+  text-shadow: 0 0 30px #0078d7, 0 0 60px rgba(0,120,215,0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.boot-sub {
+  color: #aaa;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+}
+
+#boot-progress {
+  width: 320px;
+  height: 22px;
+  border: 2px solid #444;
+  background: #111;
+  overflow: hidden;
+}
+
+#boot-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: repeating-linear-gradient(
+    90deg,
+    #0078d7 0px,  #005fa3 10px,
+    #0078d7 10px, #0078d7 20px
+  );
+  transition: width 0.3s ease;
+}
+
+#boot-text {
+  color: #0f0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  height: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* ── KEYFRAMES ── */
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 20px #0078d7, 0 0 40px rgba(0,120,215,0.3); }
+  50%       { text-shadow: 0 0 40px #0078d7, 0 0 80px rgba(0,120,215,0.6); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes scanline {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+@keyframes window-open {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* ── WINDOW OPEN ANIMATION ── */
+.window.visible {
+  animation: window-open 0.15s ease-out forwards;
+}
+
+/* ── CURSOR BLINK for boot text ── */
+.cursor-blink::after {
+  content: '_';
+  animation: blink 0.8s step-end infinite;
+}
+
+/* ── HOVER EFFECTS ── */
+.icon {
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.win-btn {
+  transition: border-color 0.05s;
+}
+
+.start-item {
+  transition: background 0.08s, color 0.08s;
+}
+
+.taskbar-btn {
+  transition: background 0.05s;
+}
+
+/* ── PROGRESS BAR SHIMMER ── */
+.progress-bar-fill {
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -100% 0; }
+  100% { background-position:  100% 0; }
+}
+
+/* ── DESKTOP ICON SELECTION ── */
+.icon.active {
+  animation: none;
+  background: rgba(0, 0, 128, 0.3);
+}
+
+/* ── SCANLINES overlay on boot ── */
+#boot-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,0,0,0.15) 2px,
+    rgba(0,0,0,0.15) 4px
+  );
+  pointer-events: none;
+}
