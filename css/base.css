@@ -136,3 +136,295 @@ a:hover { color: #cc0000; }
   .icon { width: 64px; }
   .icon .ico { font-size: 26px; }
 }
+/* ═══════════════════════════════════════
+   RESPONSIVE DESIGN FOR MOBILE DEVICES
+   ═══════════════════════════════════════ */
+
+/* Mobile styles (phones up to 768px) */
+@media (max-width: 768px) {
+  
+  /* Adjust boot screen for mobile */
+  #boot-screen {
+    padding: 20px;
+  }
+  
+  .boot-logo {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .boot-sub {
+    font-size: 10px;
+    text-align: center;
+  }
+  
+  #boot-progress {
+    width: 80%;
+    max-width: 280px;
+  }
+  
+  #boot-text {
+    font-size: 10px;
+    text-align: center;
+  }
+  
+  /* Make desktop background fit */
+  #desktop {
+    bottom: var(--taskbar-h);
+    overflow-y: auto;
+  }
+  
+  /* Reorganize icons: single column on mobile */
+  .icon {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    width: auto !important;
+    margin: 8px 12px !important;
+    padding: 8px 12px !important;
+    gap: 12px !important;
+    left: auto !important;
+    top: auto !important;
+  }
+  
+  .icon .ico {
+    font-size: 28px;
+  }
+  
+  /* Desktop wrapper for scrolling */
+  #desktop {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    overflow-y: auto;
+  }
+  
+  /* Windows become full width on mobile */
+  .window {
+    width: 95% !important;
+    max-width: 95% !important;
+    left: 2.5% !important;
+    right: 2.5% !important;
+    top: 10px !important;
+    height: auto !important;
+    max-height: 85vh !important;
+    margin: 0 auto;
+  }
+  
+  .window-body {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  /* Title bar buttons easier to tap */
+  .win-btn {
+    width: 28px;
+    height: 24px;
+    font-size: 12px;
+  }
+  
+  /* Taskbar adjustments */
+  #taskbar {
+    height: 48px;
+    padding: 0 8px;
+  }
+  
+  #start-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .taskbar-btn {
+    height: 36px;
+    padding: 4px 10px;
+    font-size: 12px;
+    max-width: 120px;
+  }
+  
+  #systray {
+    gap: 8px;
+    padding: 4px 10px;
+  }
+  
+  #clock {
+    font-size: 12px;
+  }
+  
+  /* Start menu full width on mobile */
+  #start-menu {
+    width: 90%;
+    left: 5%;
+    bottom: 50px;
+  }
+  
+  .start-item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .start-item .ico {
+    font-size: 20px;
+  }
+  
+  /* Welcome dialog full width on mobile */
+  .dialog-box {
+    width: 90%;
+    max-width: 340px;
+  }
+  
+  .dialog-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .dialog-icon {
+    font-size: 48px;
+  }
+  
+  .dialog-btn {
+    padding: 8px 16px;
+    min-width: 100px;
+  }
+  
+  /* Infobox (resume card) full width on mobile */
+  .infobox {
+    float: none;
+    width: 100%;
+    margin: 12px 0;
+  }
+  
+  .about-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Project cards stack nicely */
+  .project-card {
+    padding: 12px;
+  }
+  
+  .badge {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+  
+  /* Tables scroll horizontally */
+  .win-content {
+    overflow-x: auto;
+  }
+  
+  .win-content table {
+    min-width: 500px;
+  }
+  
+  /* HackerRank section */
+  .hr-domain {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .hr-visit-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  /* Contact form */
+  .win-form input,
+  .win-form textarea {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  
+  .win-form .submit-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  
+  /* Certificate cards */
+  .cert-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .cert-card .cert-icon {
+    font-size: 36px;
+  }
+  
+  /* Facebook post */
+  .fb-post-header {
+    flex-wrap: wrap;
+  }
+}
+
+/* Tablet styles (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .icon {
+    width: 70px;
+  }
+  
+  .icon .ico {
+    font-size: 28px;
+  }
+  
+  .icon span {
+    font-size: 10px;
+  }
+  
+  .window {
+    width: 85% !important;
+    left: 7.5% !important;
+  }
+  
+  .infobox {
+    width: 240px;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1400px) {
+  
+  .icon {
+    width: 90px;
+  }
+  
+  .icon .ico {
+    font-size: 36px;
+  }
+  
+  .icon span {
+    font-size: 12px;
+  }
+  
+  .window {
+    min-width: 400px;
+  }
+}
+
+/* Fix for mobile landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  
+  .window {
+    max-height: 70vh !important;
+  }
+  
+  .window-body {
+    max-height: 45vh;
+  }
+  
+  #desktop {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .icon {
+    margin: 4px !important;
+    padding: 4px 8px !important;
+  }
+}
