@@ -16,13 +16,6 @@ https://github.com/harshtyagi334/portfolio
 
 🔗 LinkedIn:  
 https://www.linkedin.com/in/harsh-tyagi-118577312
-
----
-
-# 📸 Preview
-
-<img width="1200" alt="Portfolio Preview" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-
 ---
 
 # ✨ Features
