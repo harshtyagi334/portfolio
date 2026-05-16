@@ -1,99 +1,377 @@
 # 🖥️ Harsh Tyagi — PixelOS Portfolio
 
-A Windows 98-inspired interactive portfolio website.
+> A fully interactive Windows 98-inspired developer portfolio built with pure HTML, CSS, and JavaScript.
+
+Experience a nostalgic desktop operating system directly in the browser — complete with draggable windows, a retro taskbar, desktop shortcuts, boot animations, and an immersive pixel-style UI inspired by classic Windows systems.
 
 ---
 
-## 📁 Directory Structure
+# 🌐 Live Demo
 
-```
-harsh-portfolio/
+🔗 Portfolio Website:  
+https://harshtyagi334.github.io/portfolio/
+
+🔗 GitHub Repository:  
+https://github.com/harshtyagi334/portfolio
+
+🔗 LinkedIn:  
+https://www.linkedin.com/in/harsh-tyagi-118577312
+
+---
+
+# 📸 Preview
+
+<img width="1200" alt="Portfolio Preview" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+---
+
+# ✨ Features
+
+## 🪟 Retro Desktop Experience
+- Windows 98-inspired user interface
+- Draggable application windows
+- Interactive desktop shortcuts
+- Functional taskbar
+- Start menu system
+- Window focus management
+- Minimize / maximize / close actions
+
+## ⚡ Interactive UI & Animations
+- Smooth boot screen animation
+- Retro-style transitions
+- Hover effects and desktop interactions
+- Live digital clock
+- Responsive user interactions
+
+## 👨‍💻 Portfolio Sections
+- About Me
+- Projects
+- Skills
+- Certifications
+- Experience
+- HackerRank
+- Contact Information
+
+## 🎨 PixelOS Design System
+- Pixel-perfect retro aesthetics
+- Monospace typography
+- Custom CSS variables
+- Lightweight architecture
+- Minimal and fast-loading UI
+
+## 📱 Responsive Design
+- Desktop optimized experience
+- Mobile-friendly layout support
+- Adaptive window scaling
+
+---
+
+# 🧱 Project Architecture
+
+```bash
+portfolio/
 │
-├── index.html                  ← Main HTML (entry point)
+├── index.html                  # Main entry point
 │
 ├── css/
-│   ├── base.css                ← CSS variables, reset, desktop, icons, tooltips
-│   ├── windows.css             ← Window chrome, taskbar, start menu, dialogs
-│   ├── components.css          ← Content styles, badges, cards, forms, tables
-│   └── animations.css          ← Boot screen, transitions, keyframes
+│   ├── base.css                # CSS variables, desktop styles, resets
+│   ├── windows.css             # Window system styling
+│   ├── components.css          # Cards, forms, tables, badges
+│   └── animations.css          # Boot animations & transitions
 │
 ├── js/
-│   ├── content.js              ← All window HTML content (edit your info here)
-│   ├── window-manager.js       ← Open/close/minimize/maximize/drag/focus logic
-│   ├── taskbar.js              ← Taskbar buttons, clock, start menu, forms
-│   ├── boot.js                 ← Boot screen animation sequence
-│   └── app.js                  ← Main entry — initialises all modules
+│   ├── content.js              # Portfolio content
+│   ├── window-manager.js       # Window interactions & controls
+│   ├── taskbar.js              # Taskbar & start menu logic
+│   ├── boot.js                 # Boot sequence animation
+│   └── app.js                  # Main application bootstrap
 │
 ├── assets/
-│   └── icons/
-│       └── favicon.ico         ← Add your favicon here (optional)
+│   ├── icons/
+│   ├── wallpapers/
+│   └── favicon.ico
 │
-└── README.md                   ← This file
+└── README.md
 ```
 
 ---
 
-## ✏️ How to Customise
+# 🛠️ Technologies Used
 
-### Update Your Info
-- Open **`js/content.js`** — all window content is here as plain HTML strings.
-- Each key maps to a window: `about`, `projects`, `skills`, `experience`, `certifications`, `hackerrank`, `contact`.
-
-### Update HackerRank Username
-In `js/content.js`, search for `harshtyagi334` in the `hackerrank` section and replace with your actual username. Also update the URL in `index.html` under the desktop icon and start menu.
-
-### Add a New Window
-1. Add a new entry to `WINDOWS` in `js/window-manager.js`
-2. Add window HTML in `index.html` (copy an existing window block)
-3. Add content in `js/content.js`
-4. Add a desktop icon + start menu item in `index.html`
-
-### Change Colors
-All colors are CSS variables in `css/base.css` under `:root { }`.
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Structure |
+| CSS3 | Styling & Animations |
+| Vanilla JavaScript | Interactivity |
+| Google Fonts | Retro Typography |
+| GitHub Pages | Deployment |
 
 ---
 
-## 🚀 How to Host (Free, No Branding)
+# 🎨 UI Inspiration
 
-### Option A — Netlify Drop (30 seconds)
-1. Go to **netlify.com/drop**
-2. Drag the entire `harsh-portfolio/` folder
-3. Get a live URL
+This project is inspired by:
+- Windows 95 / Windows 98
+- Retro desktop operating systems
+- Pixel-art interfaces
+- Cyberpunk UI aesthetics
+- Classic developer environments
 
-### Option B — GitHub Pages (Recommended for developers)
+---
+
+# 🚀 Getting Started
+
+## 📋 Prerequisites
+
+You only need:
+- A modern browser
+- VS Code (recommended)
+
+No frameworks. No dependencies. No build tools.
+
+---
+
+# ⚙️ Local Development
+
+## Clone Repository
+
+```bash
+git clone https://github.com/harshtyagi334/portfolio.git
+```
+
+## Open Project Folder
+
+```bash
+cd portfolio
+```
+
+## Run Locally
+
+Option 1:
+Simply open:
+
+```bash
+index.html
+```
+
+inside your browser.
+
+Option 2 (Recommended):
+Use VS Code Live Server.
+
+```bash
+Right Click → Open with Live Server
+```
+
+---
+
+# ✏️ Customisation Guide
+
+## 🧑 Update Portfolio Content
+
+Edit:
+
+```bash
+js/content.js
+```
+
+All portfolio content is stored here as HTML strings.
+
+---
+
+## 🎨 Change Theme Colors
+
+Edit variables in:
+
+```bash
+css/base.css
+```
+
+Example:
+
+```css
+:root {
+  --bg-color: #008080;
+  --window-color: #c0c0c0;
+}
+```
+
+---
+
+## ➕ Add New Desktop Window
+
+### Step 1 — Add Window Config
+
+Edit:
+
+```bash
+js/window-manager.js
+```
+
+Add a new object inside `WINDOWS`.
+
+---
+
+### Step 2 — Add Window HTML
+
+Edit:
+
+```bash
+index.html
+```
+
+Copy an existing window block.
+
+---
+
+### Step 3 — Add Window Content
+
+Edit:
+
+```bash
+js/content.js
+```
+
+Create a new content section.
+
+---
+
+### Step 4 — Add Desktop Icon & Start Menu Item
+
+Inside:
+
+```bash
+index.html
+```
+
+add:
+- Desktop shortcut
+- Start menu entry
+
+---
+
+# 🌍 Deployment
+
+## 🐙 Deploy on GitHub Pages
+
 ```bash
 git init
 git add .
 git commit -m "Initial portfolio"
-git remote add origin https://github.com/harshtyagi334/harsh-portfolio.git
+git remote add origin https://github.com/harshtyagi334/portfolio.git
 git push -u origin main
 ```
-Then: Settings → Pages → Deploy from `main` branch → `/` (root)
-Live at: `harshtyagi334.github.io/harsh-portfolio`
 
-### Option C — Custom Domain (No platform branding in URL)
-1. Buy `harshtyagi.dev` on Porkbun (~₹300/yr)
-2. Host on Netlify or GitHub Pages (free)
-3. Connect domain via DNS settings
+Then:
+
+```text
+GitHub → Settings → Pages
+```
+
+Deploy from:
+- Branch: `main`
+- Folder: `/ (root)`
+
+Live URL:
+
+```bash
+https://harshtyagi334.github.io/portfolio/
+```
 
 ---
 
-## 🛠️ Local Development
+## 🔥 Deploy on Netlify
 
-No build tools needed! Just open `index.html` in a browser, or use VS Code Live Server:
-```
-Right-click index.html → Open with Live Server
-```
+1. Visit:
+https://netlify.com/drop
+
+2. Drag & drop the project folder
+
+3. Site deploys instantly
 
 ---
 
-## 📦 Technologies Used
+## 🌐 Custom Domain Setup
 
-| Technology | Purpose |
-|---|---|
-| HTML5 | Structure |
-| CSS3 (4 files) | Styling, animations |
-| Vanilla JavaScript (5 files) | Interactivity |
-| Google Fonts | VT323 + Share Tech Mono (retro fonts) |
+You can connect:
+- `.dev`
+- `.tech`
+- `.me`
 
-Zero dependencies. Zero frameworks. Zero build steps.
+domains using:
+- GitHub Pages
+- Netlify
+- Firebase Hosting
+
+---
+
+# 📈 Future Improvements
+
+- Terminal emulator
+- Fake file explorer
+- Built-in music player
+- Desktop widgets
+- Theme switcher
+- Window snapping
+- AI chatbot assistant
+- Retro boot sound
+- Browser mini games
+- Command palette
+- Dynamic wallpapers
+
+---
+
+# 🧠 Performance
+
+✅ Zero frameworks  
+✅ Zero dependencies  
+✅ Lightweight architecture  
+✅ Fast loading speed  
+✅ SEO friendly  
+✅ Mobile optimized  
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+## Steps
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+## Harsh Tyagi
+
+- GitHub: https://github.com/harshtyagi334
+- LinkedIn: https://www.linkedin.com/in/harsh-tyagi-118577312
+- Portfolio: https://harshtyagi334.github.io/portfolio/
+
+---
+
+# ⭐ Support
+
+If you like this project:
+
+⭐ Star the repository  
+🍴 Fork the project  
+📢 Share it with developers  
+
+---
+
+# 💡 Final Note
+
+PixelOS Portfolio is more than just a portfolio website — it's an interactive developer experience that combines nostalgia, creativity, UI engineering, and frontend development into a unique digital portfolio.
